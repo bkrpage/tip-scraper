@@ -30,7 +30,7 @@ def parse():
 
     #time, home, away,  = ''
 
-    # do this shit
+    # print out data
     for row in itertable:
         print(row[1].text_content())
         print(row[2].text_content() + ' - ' + row[3].text_content())
@@ -49,7 +49,7 @@ def db_test():
     conn = pymysql.connect(host='localhost', user='testuser', passwd='test623', db='testdb');
 
     cur = conn.cursor()
-    cur.execute("SELECT Host,User FROM user")
+    cur.execute("SELECT * FROM test_table")
 
     print(cur.description)
     print()
